@@ -1,0 +1,56 @@
+﻿local index1--右
+local index2--左
+local index3--玩家自己
+local extra
+local room
+local function get_selected_card()
+    room.SelectedCards=index3:GetSelectedCards()
+end
+local function set_selected_card(st)
+    index3:SetSelectedCards(st)
+end
+local function SetUI(data,target)
+    if data then
+        target:SetScore(data.Score)
+        target:SetName(data.Name)
+        target:SetStatus(data.IsPeasant);
+        target:ShowCard(data.CardShowMsg)
+        target:SetHandleCard(data.CardHoldMsg)
+        target:SetTip(data.TipMsg)
+    end
+end
+local function refreshUI(params)
+    extra:SetCards(params.ExtraCard)
+    if params.Index1 then
+        SetUI(params.Index1,index1)
+    end
+    if params.Index2 then
+        SetUI(params.Index2,index2)
+    end
+    if params.Index3 then
+        SetUI(params.Index3,index3)
+    end
+end
+--这个user应该具备所有玩家的代理
+function OnInit(userdata)
+    room=userdata
+    extra=extra_card:GetComponent("CardShow")
+    index1= player_1:GetComponent("PlayerView")
+    index2= player_2:GetComponent("PlayerView")
+    index3= player_3:GetComponent("PlayerView")
+end
+function OnOpen(userdata)
+    room=userdata
+    room.RefreshUiAction= room.RefreshUiAction+ refreshUI
+    room.GetSelectedCardsAction=get_selected_card
+    room.SetSelectedCardsAction=set_selected_card
+    extra=extra_card:GetComponent("CardShow")
+    index1= player_1:GetComponent("PlayerView")
+    index2= player_2:GetComponent("PlayerView")
+    index3= player_3:GetComponent("PlayerView")
+end
+function OnClose(userdata)
+    room.RefreshUiAction=room.RefreshUiAction-refreshUI
+    room.GetSelectedCardsAction=room.GetSelectedCardsAction-get_selected_card
+    room.SetSelectedCardsAction=room.SetSelectedCardsAction-set_selected_card
+end 

@@ -1,0 +1,5 @@
+#	默认配置		
+#	配置项	策略备注	配置值
+	Login.IP		192.168.31.33
+	Login.Port		8888
+	LaunchScene	启动场景	Main

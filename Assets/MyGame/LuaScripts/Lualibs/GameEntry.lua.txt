@@ -1,0 +1,4 @@
+﻿local GameEntry=CS.MyGame.GameEntry
+
+
+return GameEntry

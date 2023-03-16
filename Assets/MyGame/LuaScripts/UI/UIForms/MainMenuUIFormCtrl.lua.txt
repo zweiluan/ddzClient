@@ -1,0 +1,22 @@
+﻿local procedure
+local function single()
+    print('single')
+    procedure.single=true
+end
+local function mult()
+    print('mult')
+    procedure.mult=true
+end
+function OnInit(userdata)
+    procedure=userdata
+    single_bt:GetComponent("Button").onClick:AddListener(single)
+    mult_bt:GetComponent("Button").onClick:AddListener(mult)
+end
+function OnOpen(userdata)
+
+end
+function OnClose(userdata)
+    single_bt:GetComponent("Button").onClick:RemoveListener(single)
+    mult_bt:GetComponent("Button").onClick:RemoveListener(mult)
+    procedure=nil
+end 

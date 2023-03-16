@@ -1,0 +1,38 @@
+[
+  {
+    "id": 10001,
+    "name": "SignIn",
+    "path": "Login",
+    "group": "Default"
+  },
+  {
+    "id": 10002,
+    "name": "MainMenu",
+    "path": "MainMenu",
+    "group": "Default"
+  },
+  {
+    "id": 10003,
+    "name": "Room",
+    "path": "Room",
+    "group": "Default"
+  },
+  {
+    "id": 10004,
+    "name": "Game",
+    "path": "GameUIForm",
+    "group": "Default"
+  },
+  {
+    "id": 10005,
+    "name": "Dialog",
+    "path": "Dialog",
+    "group": "Dialog"
+  },
+  {
+    "id": 10006,
+    "name": "Command",
+    "path": "Command",
+    "group": "Level1"
+  }
+]

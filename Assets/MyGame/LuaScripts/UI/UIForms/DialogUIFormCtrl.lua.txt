@@ -1,0 +1,26 @@
+﻿local util = require 'util'
+local cg
+local r_bt
+local msg
+local function close()
+    CS.MyGame.GameEntry.Base:StartCoroutine(util.cs_generator(
+            function()
+                cg:DOFade(0,0.2); 
+                coroutine.yield(CS.UnityEngine.WaitForSeconds(0.2))
+                CS.MyGame.GameEntry.UI:CloseDialogUI()
+    end))
+end
+function OnInit(userdata)
+    
+end
+function OnOpen(userdata)
+    msg=content:GetComponent("TextMeshProUGUI")
+    r_bt=root: GetComponent("Button")
+    cg=alpha: GetComponent("CanvasGroup")
+    r_bt.onClick:AddListener(close)
+    msg.text=userdata.Msg
+    cg.alpha=1
+end
+function OnClose(userdata)
+    r_bt.onClick:RemoveListener(close)
+end 

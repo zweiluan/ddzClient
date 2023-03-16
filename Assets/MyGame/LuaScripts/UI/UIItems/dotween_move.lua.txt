@@ -1,0 +1,13 @@
+﻿local tween=require("dotween")
+tween.dotween.Init()
+--print(base:GetComponent("Image"))
+local image=base:GetComponent("Image")
+--image:DOFade(0,10)
+--tween.sc.DOLocalMoveX(base.transform,100,10)
+
+base.transform:DOLocalMove(CS.UnityEngine.Vector3(0,0,0),2)
+
+--tween.ex.ToAlpha(image.color ,function(v) image.color=v end,0,10)
+--DOFade(base:GetComponent("Image"),0,10)
+--tween.shortcut.DORestart(base.transform)
+--tween.dotween:Play()

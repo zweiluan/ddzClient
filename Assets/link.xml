@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<linker>
+  <assembly fullname="GameFramework" preserve="all" />
+  <assembly fullname="UnityGameFramework.Runtime" preserve="all" />
+  <assembly fullname="MyGame.Launch" preserve="all" />
+  <assembly fullname="UnityEngine.CoreModule" preserve="all"/>
+  <assembly fullname="UnityEngine.Physics2DModule" preserve="all" />
+  <assembly fullname="UnityEngine.AnimationModule" preserve="all" />
+  <assembly fullname="UnityEngine.NVIDIAModule" preserve="all" />
+  <assembly fullname="UnityEngine.ParticleSystemModule" preserve="all" />
+  <assembly fullname="UnityEngine.SubsystemsModule" preserve="all" />
+  <assembly fullname="UnityEngine.TextRenderingModule" preserve="all" />
+  <assembly fullname="UnityEngine.AssetBundleModule" preserve="all" />
+  <assembly fullname="UnityEngine.AudioModule" preserve="all" />
+  <assembly fullname="UnityEngine.DirectorModule" preserve="all" />
+  <assembly fullname="UnityEngine.InputLegacyModule" preserve="all" />
+  <assembly fullname="UnityEngine.UIElementsModule" preserve="all" />
+  <assembly fullname="UnityEngine.UIModule" preserve="all" />
+  <assembly fullname="UnityEngine.UnityAnalyticsModule" preserve="all" />
+  <assembly fullname="XLua" preserve="all" />
+  <assembly fullname="XLua.DLL" preserve="all" />
+  <assembly fullname="DG.Tweening" preserve="all" />
+</linker>

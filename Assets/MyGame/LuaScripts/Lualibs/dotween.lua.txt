@@ -1,0 +1,7 @@
+﻿local dotween={}
+dotween.base=CS.DG.Tweening
+dotween.sc=dotween.base.ShortcutExtensions;
+dotween.dotween=dotween.base.DOTween
+dotween.ui=dotween.base.DOTweenModuleUI
+dotween.ex=CS.XLua.Extension.DotweenExtension
+return dotween

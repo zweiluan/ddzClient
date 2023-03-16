@@ -1,0 +1,102 @@
+﻿local function ReadOnly(t)
+    local proxy={}
+    local mt={
+        __index=t,
+        __newindex=function(t,k,v)
+            
+        end
+    }
+    setmetatable(proxy,mt)
+    return proxy
+end
+--local days=ReadOnly{"1","2",ReadOnly{"3","4"}}
+--days[3][1]="5"
+--local a=days[3][1]
+--print(a)
+local function Privacy(x)
+    local self={}
+    self.x=x
+    local get=function()
+        return self.x
+    end
+    local set=function(y) 
+        self.x=y
+    end
+    return{get=get,set=set}
+end
+--local m=Privacy(2)
+--print(m.get())
+--m.set(102)
+--print(m.get())
+--print(m.x)
+--local t={1,2,3,4,5}
+--t.s="6"
+--for k,v in pairs(t) do
+--    print(k,v)
+--end
+local function print_all(...)
+    for _, v in pairs { ... } do
+        print(v)
+    end
+end
+--print_all(1,2,3,4,5,6,7,8,9)
+function quicksort(t,left,right)
+
+    if (left<right) then
+        local i,j=left,right
+        local x=t[left]
+        while (i<j) do
+            while(i<j and t[j]>x)do
+                j=j-1
+            end
+            if(i<j) then
+                t[i]=t[j]
+                i=i+1
+            end
+            while(i<j and t[i]<x)do
+                i=i+1
+            end
+            if(i<j) then
+                t[j]=t[i]
+                j=j-1
+            end
+        end
+        t[i]=x
+        quicksort(t,left,i-1)
+        quicksort(t,i+1,right)
+    end
+    return t
+end
+--local t={3,2,4,5,6,1}
+--quicksort(t,1,6)
+--for i, v in ipairs(t) do
+--    print(v)
+--end
+local k={}
+local m={__index=function(_,key)
+    return "k[key]"
+end,__newindex=k
+
+}
+local n={1,2,3}
+
+--setmetatable(n,m)
+--n.s=5
+--for v,k in pairs(n) do
+--    print(v..k)
+--end
+--print(n.s)
+local rooms={waittingroom={},runningroom={2}}
+--存在空洞不靠谱
+print(#rooms)
+table.insert(rooms.waittingroom,4)
+table.insert(rooms.waittingroom,3)
+table.insert(rooms.waittingroom,2)
+for i, v in ipairs(rooms.waittingroom) do
+    print(v)
+end
+--先进后出
+table.remove(rooms.waittingroom)
+for i, v in ipairs(rooms.waittingroom) do
+    print(v)
+end

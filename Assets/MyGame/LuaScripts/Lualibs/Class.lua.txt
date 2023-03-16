@@ -1,0 +1,95 @@
+﻿local _class={}
+--function class(super)
+--    local class_type={}
+--    class_type.ctor=false
+--    class_type.super=super
+--    class_type.new=function(...)
+--        local obj={}
+--        do
+--            local creat
+--            creat= function(c,...)
+--                if c.super then
+--                    creat(c.super,...)
+--                end
+--                --核心，对于每个类，都会调用器构造器，这样才能实现属于自己内部的属性
+--                if c.ctor then
+--                    c.ctor(obj,...)
+--                end
+--            end
+--            creat(class_type,...)
+--        end
+--        --从class中查询元方法
+--        setmetatable(obj,{__index=_class[class_type]})
+--        return obj
+--    end
+--    --base_type的index元表
+--    local vtbl={}
+--    _class[class_type]=vtbl
+--    setmetatable(class_type,{__newindex=
+--    function(t,k,v)
+--        vtbl[k]=v
+--    end})
+--    if super then
+--        setmetatable(vtbl,{__index= 
+--                           function(t,k)
+--                               local ret=_class[super][k]
+--                               vtbl[k]=ret
+--                               return ret
+--                            end
+--        })
+--    end
+--    return class_type
+--end
+function class(super)
+    local class_type ={}
+    class_type.ctor=false
+    class_type.super=super
+    class_type.new=function(...) 
+        local obj={}
+                do
+                    local creat
+                    creat= function(c,...)
+                        if c.super then
+                            creat(c.super,...)
+                        end
+                        --核心，对于每个类，都会调用器构造器，这样才能实现属于自己内部的属性
+                        if c.ctor then
+                            c.ctor(obj,...)
+                        end
+                    end
+                    creat(class_type,...)
+                end
+        setmetatable(obj, { __index=_class[class_type] })
+        return obj
+    end
+    local vtbl={}
+    _class[class_type]=vtbl
+    setmetatable(class_type,{__newindex=
+                             function(t,k,v)
+                            vtbl[k]=v
+                             end
+    })
+    if super then
+        setmetatable(vtbl,{__index=function(t,k)
+            local ret=class[k]
+            vtbl[k]=ret
+            return ret
+        end})
+    end
+    return class_type
+end
+--如何使用
+--声明基类
+--local base_type=class()
+----定义构造器
+--function base_type:ctor(x)
+--    self.x=x
+--end 
+----定义方法，与子类不同，这个是直接原表中创建，而不是key
+--function base_type:print_x()
+--    print(self.x)
+--end 
+--
+--local test=base_type.new(1)
+----test.x=2
+--test:print_x()

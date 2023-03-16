@@ -1,0 +1,71 @@
+local command
+
+local function set_mode(i)
+
+    if i==1 then
+        singl_begin:SetActive(true)
+    elseif i==2 then
+        mult_begin:SetActive(true)
+    elseif i==3 then
+        req_master:SetActive(true)
+    elseif i==4 then
+        gen:SetActive(true)
+    elseif i==5 then
+        chu:SetActive(true)
+    else
+        end_game:SetActive(true)
+    end
+end
+local function action1()
+    command:Action1()
+
+end
+local function action2()
+    command:Action2()
+
+end
+local function action3()
+    command:Action3()
+
+end
+
+function OnInit(userdata)
+    print("OnInit")
+    
+end
+function OnOpen(userdata)
+    command=userdata
+    singl_begin.transform:Find("start"):GetComponent("Button").onClick:AddListener(action1)
+    mult_begin.transform:Find("ming"):GetComponent("Button").onClick:AddListener(action1)
+    mult_begin.transform:Find("start"):GetComponent("Button").onClick:AddListener(action2)
+    req_master.transform:Find("req"):GetComponent("Button").onClick:AddListener(action2)
+    req_master.transform:Find("pass"):GetComponent("Button").onClick:AddListener(action1)
+    gen.transform:Find("pass"):GetComponent("Button").onClick:AddListener(action1)
+    gen.transform:Find("help"):GetComponent("Button").onClick:AddListener(action2)
+    gen.transform:Find("use"):GetComponent("Button").onClick:AddListener(action3)
+    chu.transform:Find("use"):GetComponent("Button").onClick:AddListener(action1)
+    end_game.transform:Find("restart"):GetComponent("Button").onClick:AddListener(action2)
+    end_game.transform:Find("exit"):GetComponent("Button").onClick:AddListener(action1)
+    singl_begin:SetActive(false)
+    mult_begin:SetActive(false)
+    req_master:SetActive(false)
+    gen:SetActive(false)
+    chu:SetActive(false)
+    end_game:SetActive(false)
+    print("OnOpen")
+    set_mode(userdata.Mode)
+end
+function OnClose(userdata)
+    print("OnClose")
+    singl_begin.transform:Find("start"):GetComponent("Button").onClick:RemoveListener(action1)
+    mult_begin.transform:Find("ming"):GetComponent("Button").onClick:RemoveListener(action1)
+    mult_begin.transform:Find("start"):GetComponent("Button").onClick:RemoveListener(action2)
+    req_master.transform:Find("req"):GetComponent("Button").onClick:RemoveListener(action2)
+    req_master.transform:Find("pass"):GetComponent("Button").onClick:RemoveListener(action1)
+    gen.transform:Find("pass"):GetComponent("Button").onClick:RemoveListener(action1)
+    gen.transform:Find("help"):GetComponent("Button").onClick:RemoveListener(action2)
+    gen.transform:Find("use"):GetComponent("Button").onClick:RemoveListener(action3)
+    chu.transform:Find("use"):GetComponent("Button").onClick:RemoveListener(action1)
+    end_game.transform:Find("restart"):GetComponent("Button").onClick:RemoveListener(action2)
+    end_game.transform:Find("exit"):GetComponent("Button").onClick:RemoveListener(action1)
+end 

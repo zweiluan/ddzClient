@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <ResourceCollection>
+    <Resources>
+      <Resource Name="Config" LoadType="0" Packed="False" />
+      <Resource Name="DLL" LoadType="0" Packed="False" />
+      <Resource Name="Lua" LoadType="0" Packed="False" />
+      <Resource Name="scene" LoadType="0" Packed="False" />
+      <Resource Name="UIForm" LoadType="0" Packed="False" />
+    </Resources>
+    <Assets>
+      <Asset Guid="0e1c37b340d7c3445a625c583d86ccef" ResourceName="DLL" />
+      <Asset Guid="0e92c19c1b0a0d042a9ddd220806ea64" ResourceName="UIForm" />
+      <Asset Guid="0fe25a92815b7494ea3268fbf1486365" ResourceName="Lua" />
+      <Asset Guid="1eb1d12c8a91ed34dbfcdfc0747786d2" ResourceName="DLL" />
+      <Asset Guid="2e697c9cdac3ac1429096aabd685669b" ResourceName="UIForm" />
+      <Asset Guid="2e90112da79a4ed9816cddba39c3ba31" ResourceName="Lua" />
+      <Asset Guid="3478e1d3c350ba148bdaa767105769d6" ResourceName="UIForm" />
+      <Asset Guid="5f1597cef884b124ab6f6261e6e63794" ResourceName="UIForm" />
+      <Asset Guid="72aa5abe99129bf4cbd2f71df05d019f" ResourceName="Config" />
+      <Asset Guid="72dc765b218d79440a0850798d61bfe0" ResourceName="UIForm" />
+      <Asset Guid="791160577d56c6d49b7549556b232022" ResourceName="UIForm" />
+      <Asset Guid="82789730346e4d60b6ab31d935d1e09d" ResourceName="Lua" />
+      <Asset Guid="85b0250ff401101459eb312a08948753" ResourceName="DLL" />
+      <Asset Guid="8899799f62f3429bb2b83db0ef84f3e7" ResourceName="Lua" />
+      <Asset Guid="9c62fc128ddc4fe6affd63ba57e69ee9" ResourceName="Lua" />
+      <Asset Guid="c2cab3df176dad34a97baeca4fcdc560" ResourceName="scene" />
+      <Asset Guid="d8ecf3df87a8e084fa01023be66052f0" ResourceName="DLL" />
+      <Asset Guid="db32eb4be1944b059590a7429efc4d96" ResourceName="Lua" />
+      <Asset Guid="f7b9ca1d89a9e01438503de9bda3c5de" ResourceName="UIForm" />
+    </Assets>
+  </ResourceCollection>
+</UnityGameFramework>

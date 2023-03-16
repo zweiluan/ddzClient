@@ -1,0 +1,54 @@
+﻿--ui= require "LuaUIView"
+local net
+local account
+local psw
+
+local function signin()
+    --print("accept"..login_accept.text);
+    --print("num"..login_num.text);
+    --if login_num.text then
+    --    print("num"..type(login_num.text));
+    --    --net:
+    --end
+    if account.text~="" and psw.text~="" then
+        print("账号为："..account.text.."\n".."密码为： "..psw.text)
+    end
+    net:SignIn(account.text,psw.text)
+    --print("登录")
+end
+local function register()
+    if account.text~="" and psw.text~="" then
+        print("账号为："..account.text.."\n".."密码为： "..psw.text)
+    end
+    net:Register(account.text,psw.text)
+    --print("注册")
+end
+local function skip()
+    net:Skip()
+end
+function OnInit(userdata)
+    net=userdata
+    account=account_if:GetComponent("InputField")
+    psw=psw_if:GetComponent("InputField")
+    signin_bt:GetComponent("Button").onClick:AddListener(signin)
+    register_bt:GetComponent("Button").onClick:AddListener(register)
+    skip_bt:GetComponent("Button").onClick:AddListener(skip)
+    print("OnInit")
+end
+function OnOpen(userdata)
+    print("OnOpen")
+end
+function OnClose(userdata)
+    --produre=nil
+    --login_accept=nil
+    --login_num=nil
+    signin_bt:GetComponent("Button").onClick:RemoveListener(signin)
+    register_bt:GetComponent("Button").onClick:RemoveListener(register)
+    skip_bt:GetComponent("Button").onClick:RemoveListener(skip)
+    net=nil
+    print("OnClose")
+end
+--function OnUpdate(elapseSeconds,realElapseSeconds)
+--    print("OnUpdate")
+--end
+

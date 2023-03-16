@@ -1,0 +1,40 @@
+﻿require ("Class")
+print("加载Class")
+local luaUIView=class()
+function luaUIView.OnInit()
+    print("OnInit")
+end
+--function luaUIView.OnRecycle()
+--    print("OnRecycle")
+--end
+function luaUIView.OnOpen()
+    print("OnOpen")
+end
+function luaUIView.OnClose()
+    print("OnClose")
+end
+--function luaUIView.OnPause()
+--    print("OnPause")
+--end
+--function luaUIView.OnResume()
+--    print("OnResume")
+--end
+---页面覆盖
+--function luaUIView.OnCover()
+--    print("OnCover")
+--end
+---页面遮挡恢复
+--function luaUIView.OnReveal()
+--    print("OnReveal")
+--end
+-----页面激活
+--function luaUIView.OnRefocus()
+--    print("OnRefocus")
+--end
+function luaUIView.OnUpdate()
+    print("OnUpdate")
+end
+--function luaUIView.OnDepthChanged()
+--    print("OnDepthChanged")
+--end
+return luaUIView

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animancer", "Animancer.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animancer.FSM", "Animancer.FSM.csproj", "{63c8403f-2697-40e2-879d-247246bd6ba9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3rd", "3rd.csproj", "{381a67b4-9c59-9630-4ece-8589522521d9}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{e219ae27-2b2d-62b6-0094-910f7d4d2692}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{f21443e2-f27f-2ba8-90cf-db4d4a5ceb03}"
@@ -42,6 +44,8 @@ Global
 		{c2dd59b4-9aec-2075-3eb1-0cb194927726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63c8403f-2697-40e2-879d-247246bd6ba9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{63c8403f-2697-40e2-879d-247246bd6ba9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381a67b4-9c59-9630-4ece-8589522521d9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381a67b4-9c59-9630-4ece-8589522521d9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e219ae27-2b2d-62b6-0094-910f7d4d2692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{e219ae27-2b2d-62b6-0094-910f7d4d2692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f21443e2-f27f-2ba8-90cf-db4d4a5ceb03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

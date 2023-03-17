@@ -907,11 +907,11 @@
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>C:\Users\weiluan\Desktop\hub\client\ddz\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>C:\Users\weiluan\Desktop\hub\client\ddz\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.2D.Common.Runtime">
      <HintPath>C:\Users\weiluan\Desktop\hub\client\ddz\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>C:\Users\weiluan\Desktop\hub\client\ddz\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline">
      <HintPath>C:\Users\weiluan\Desktop\hub\client\ddz\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
@@ -964,6 +964,10 @@
     <ProjectReference Include="UnityGameFramework.Runtime.csproj">
       <Project>{245f8a81-87be-d940-bccd-093aa11bdb5c}</Project>
       <Name>UnityGameFramework.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="3rd.csproj">
+      <Project>{381a67b4-9c59-9630-4ece-8589522521d9}</Project>
+      <Name>3rd</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

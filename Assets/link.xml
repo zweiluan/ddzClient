@@ -17,7 +17,7 @@
   <assembly fullname="UnityEngine.UIElementsModule" preserve="all" />
   <assembly fullname="UnityEngine.UIModule" preserve="all" />
   <assembly fullname="UnityEngine.UnityAnalyticsModule" preserve="all" />
-  <assembly fullname="XLua" preserve="all" />
-  <assembly fullname="XLua.DLL" preserve="all" />
+  <assembly fullname="3rd" preserve="all" />
+<!--  <assembly fullname="XLua.DLL" preserve="all" />-->
   <assembly fullname="DG.Tweening" preserve="all" />
 </linker>

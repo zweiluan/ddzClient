@@ -1,0 +1,17 @@
+{
+    "name": "3rd",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f439c9000905304419c1405f4134fc39",
+        "GUID:0950e98fa33862c48b8f11840ac9009a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

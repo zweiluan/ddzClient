@@ -7,7 +7,8 @@ local function close()
             function()
                 cg:DOFade(0,0.2); 
                 coroutine.yield(CS.UnityEngine.WaitForSeconds(0.2))
-                CS.MyGame.GameEntry.UI:CloseDialogUI()
+                --CS.MyGame.HotFix.GameEntry.UI:CloseDialogUI()
+                --CS.MyGame.GameEntry.UI:CloseDialogUI()
     end))
 end
 function OnInit(userdata)

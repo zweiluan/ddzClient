@@ -42,8 +42,8 @@ end
 function OnOpen(userdata)
     room=userdata
     room.RefreshUiAction= room.RefreshUiAction+ refreshUI
-    room.GetSelectedCardsAction=get_selected_card
-    room.SetSelectedCardsAction=set_selected_card
+    room.GetSelectedCardsAction=room.GetSelectedCardsAction+get_selected_card
+    room.SetSelectedCardsAction=room.SetSelectedCardsAction+set_selected_card
     extra=extra_card:GetComponent("CardShow")
     index1= player_1:GetComponent("PlayerView")
     index2= player_2:GetComponent("PlayerView")

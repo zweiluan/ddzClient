@@ -23,6 +23,7 @@ namespace UnityGameFramework.Editor
             
 #endif
             "MyGame.Launch",
+            "MyGame.HotFix",
             "Assembly-CSharp",
         };
 

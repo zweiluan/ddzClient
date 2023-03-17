@@ -41,26 +41,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureChangeScene.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Base\GameEntry.Custom.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureUpdateVersion.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureInitResources.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Base\GameEntry.BuildIn.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Base\GameEntry.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureCheckResources.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureSplash.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\HotFix\HotFixComponent.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureCheckVersion.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Utility\LitJsonHelper.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Utility\AssetUtility.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureLoadDLL.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Resource\ChangeSceneLoadResourceAgentHelper.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureVerifyResources.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureLaunch.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedureUpdateResources.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Procedure\ProcedurePreload.cs" />
-     <Compile Include="Assets\MyGame\Launch\Scripts\Resource\ResourceExtension.cs" />
-     <None Include="Assets\MyGame\Launch\Scripts\MyGame.Launch.asmdef" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureChangeScene.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.Custom.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureUpdateVersion.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureInitResources.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.BuildIn.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureCheckResources.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureSplash.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\HotFix\HotFixComponent.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureCheckVersion.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Utility\LitJsonHelper.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Utility\AssetUtility.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureLoadDLL.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Resource\ChangeSceneLoadResourceAgentHelper.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureVerifyResources.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Log\FileLogHelper.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureLaunch.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureUpdateResources.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedurePreload.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\Resource\ResourceExtension.cs" />
+     <None Include="Assets\MyGame\Scripts\Launch\MyGame.Launch.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2021.3.4f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

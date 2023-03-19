@@ -1,7 +1,6 @@
 ﻿
 using System;
 using GameFramework.Event;
-using MyGame.Scripts.UI.Utility;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 

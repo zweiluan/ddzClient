@@ -43,11 +43,13 @@
   <ItemGroup>
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureChangeScene.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.Custom.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\DataStruct\BuildInfo.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureUpdateVersion.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureInitResources.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.BuildIn.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Base\GameEntry.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureCheckResources.cs" />
+     <Compile Include="Assets\MyGame\Scripts\Launch\DataStruct\VersionInfo.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureSplash.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\HotFix\HotFixComponent.cs" />
      <Compile Include="Assets\MyGame\Scripts\Launch\Procedure\ProcedureCheckVersion.cs" />

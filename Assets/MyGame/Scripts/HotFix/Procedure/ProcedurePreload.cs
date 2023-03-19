@@ -27,7 +27,7 @@ namespace MyGame
             m_LoadedFlag=new Dictionary<string, bool>();
             m_LuaFinish = false;
             m_LubanFinish = false;
-            Debug.Log("资源预加载");
+            Log.Info("资源预加载");
             GameEntry.xLua.Init(LuaInitFinish);
             GameEntry.Luban.Init(LubanInitFinish);
             LoadConfig("DefaultConfig");
@@ -43,7 +43,7 @@ namespace MyGame
         protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            if (m_LuaFinish && m_LuaFinish)
+            if (m_LuaFinish && m_LubanFinish )
             {
                 foreach (var kv in m_LoadedFlag)
                 {
@@ -104,14 +104,14 @@ namespace MyGame
         
         void LubanInitFinish()
         {
-            Debug.Log("Luban初始化完毕");
-            m_LuaFinish = true;
+            Log.Info("Luban初始化完毕");
+            m_LubanFinish = true;
             
         }
 
         void LuaInitFinish()
         {
-            Debug.Log("lua初始化完毕");
+            Log.Info("lua初始化完毕");
             m_LuaFinish = true;
             
         }

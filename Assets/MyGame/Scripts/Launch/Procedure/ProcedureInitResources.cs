@@ -3,7 +3,7 @@ using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
 using GameEntry = MyGame.Launch.GameEntry;
 
-namespace MyGame.Lanuch
+namespace MyGame.Launch
 {
     public class ProcedureInitResources : ProcedureBase
     {

@@ -117,19 +117,19 @@ namespace UnityGameFramework.Runtime
 
 #if UNITY_5_4_OR_NEWER
             UnityWebRequest unityWebRequest = UnityWebRequest.Get(fileUri);
-#if UNITY_2017_2_OR_NEWER
+    #if UNITY_2017_2_OR_NEWER
             yield return unityWebRequest.SendWebRequest();
-#else
+    #else
             yield return unityWebRequest.Send();
-#endif
+    #endif
 
-#if UNITY_2020_2_OR_NEWER
+    #if UNITY_2020_2_OR_NEWER
             isError = unityWebRequest.result != UnityWebRequest.Result.Success;
-#elif UNITY_2017_1_OR_NEWER
+    #elif UNITY_2017_1_OR_NEWER
             isError = unityWebRequest.isNetworkError || unityWebRequest.isHttpError;
-#else
+    #else
             isError = unityWebRequest.isError;
-#endif
+    #endif
             bytes = unityWebRequest.downloadHandler.data;
             errorMessage = isError ? unityWebRequest.error : null;
             unityWebRequest.Dispose();

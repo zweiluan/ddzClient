@@ -66,7 +66,7 @@ namespace XLua
                         }
                         else //will dispse by LuaEnv.GC
                         {
-                            luaEnv.equeueGCAction(new LuaEnv.GCAction { Reference = luaReference, IsDelegate = is_delegate });
+                            luaEnv.equeueGCAction(new GCAction { Reference = luaReference, IsDelegate = is_delegate });
                         }
 #if THREAD_SAFE || HOTFIX_ENABLE
                     }

@@ -1,4 +1,4 @@
-﻿namespace MyGame.Scripts.UI.Utility
+﻿namespace MyGame
 {
     public class DialogParams
     {

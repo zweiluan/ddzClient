@@ -5,8 +5,6 @@ using GameFramework.Event;
 using GameFramework.Fsm;
 using GameFramework.Network;
 using GameFramework.Procedure;
-using MyGame.Scripts.UI.Utility;
-using UnityEngine;
 using UnityGameFramework.Runtime;
 
 namespace MyGame

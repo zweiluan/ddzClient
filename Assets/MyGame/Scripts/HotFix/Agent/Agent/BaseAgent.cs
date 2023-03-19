@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
+using UnityGameFramework.Runtime;
 
 namespace MyGame
 {
@@ -41,7 +42,11 @@ namespace MyGame
         }
         protected internal AgentBaseComponent AddComponent(string componentName)
         {
-            Type type = Assembly.GetExecutingAssembly().GetType($"{this.GetType().Namespace}.{componentName}");
+            Type type = GetType().Assembly.GetType($"{this.GetType().Namespace}.{componentName}");
+            if (type==null)
+            {
+                Log.Info($"未正常获得组件名称{componentName}");
+            }
             AgentBaseComponent component = (AgentBaseComponent)Activator.CreateInstance(type);
             component.Agent = this;
             component.Init();

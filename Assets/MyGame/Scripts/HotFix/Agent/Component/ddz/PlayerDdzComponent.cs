@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using MyGame.Scripts.UI.Utility;
 using UnityEngine;
 
 namespace MyGame

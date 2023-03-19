@@ -1,0 +1,197 @@
+﻿
+
+<linker>
+
+	<assembly fullname="DOTween">
+	    <type fullname="DG.Tweening.AutoPlay" preserve="all"/>
+		<type fullname="DG.Tweening.AxisConstraint" preserve="all"/>
+		<type fullname="DG.Tweening.Ease" preserve="all"/>
+		<type fullname="DG.Tweening.LogBehaviour" preserve="all"/>
+		<type fullname="DG.Tweening.LoopType" preserve="all"/>
+		<type fullname="DG.Tweening.PathMode" preserve="all"/>
+		<type fullname="DG.Tweening.PathType" preserve="all"/>
+		<type fullname="DG.Tweening.RotateMode" preserve="all"/>
+		<type fullname="DG.Tweening.ScrambleMode" preserve="all"/>
+		<type fullname="DG.Tweening.TweenType" preserve="all"/>
+		<type fullname="DG.Tweening.UpdateType" preserve="all"/>
+		<type fullname="DG.Tweening.DOTween" preserve="all"/>
+		<type fullname="DG.Tweening.DOVirtual" preserve="all"/>
+		<type fullname="DG.Tweening.EaseFactory" preserve="all"/>
+		<type fullname="DG.Tweening.Tweener" preserve="all"/>
+		<type fullname="DG.Tweening.Tween" preserve="all"/>
+		<type fullname="DG.Tweening.Sequence" preserve="all"/>
+		<type fullname="DG.Tweening.TweenParams" preserve="all"/>
+		<type fullname="DG.Tweening.Core.ABSSequentiable" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[UnityEngine.Vector3,UnityEngine.Vector3,DG.Tweening.Plugins.Options.VectorOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[UnityEngine.Color,UnityEngine.Color,DG.Tweening.Plugins.Options.ColorOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[System.Single,System.Single,DG.Tweening.Plugins.Options.FloatOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.TweenCallback" preserve="all"/>
+		<type fullname="DG.Tweening.TweenExtensions" preserve="all"/>
+		<type fullname="DG.Tweening.TweenSettingsExtensions" preserve="all"/>
+		<type fullname="DG.Tweening.ShortcutExtensions" preserve="all"/>
+		<type fullname="DG.Tweening.AutoPlay" preserve="all"/>
+		<type fullname="DG.Tweening.AxisConstraint" preserve="all"/>
+		<type fullname="DG.Tweening.Ease" preserve="all"/>
+		<type fullname="DG.Tweening.LogBehaviour" preserve="all"/>
+		<type fullname="DG.Tweening.LoopType" preserve="all"/>
+		<type fullname="DG.Tweening.PathMode" preserve="all"/>
+		<type fullname="DG.Tweening.PathType" preserve="all"/>
+		<type fullname="DG.Tweening.RotateMode" preserve="all"/>
+		<type fullname="DG.Tweening.ScrambleMode" preserve="all"/>
+		<type fullname="DG.Tweening.TweenType" preserve="all"/>
+		<type fullname="DG.Tweening.UpdateType" preserve="all"/>
+		<type fullname="DG.Tweening.DOTween" preserve="all"/>
+		<type fullname="DG.Tweening.DOVirtual" preserve="all"/>
+		<type fullname="DG.Tweening.EaseFactory" preserve="all"/>
+		<type fullname="DG.Tweening.Tweener" preserve="all"/>
+		<type fullname="DG.Tweening.Tween" preserve="all"/>
+		<type fullname="DG.Tweening.Sequence" preserve="all"/>
+		<type fullname="DG.Tweening.TweenParams" preserve="all"/>
+		<type fullname="DG.Tweening.Core.ABSSequentiable" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[UnityEngine.Vector3,UnityEngine.Vector3,DG.Tweening.Plugins.Options.VectorOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[UnityEngine.Color,UnityEngine.Color,DG.Tweening.Plugins.Options.ColorOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.Core.TweenerCore`3[System.Single,System.Single,DG.Tweening.Plugins.Options.FloatOptions]" preserve="all"/>
+		<type fullname="DG.Tweening.TweenExtensions" preserve="all"/>
+		<type fullname="DG.Tweening.TweenSettingsExtensions" preserve="all"/>
+		<type fullname="DG.Tweening.ShortcutExtensions" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="Assembly-CSharp-firstpass">
+	    <type fullname="DG.Tweening.DOTweenModuleUI" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModuleSprite" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModuleAudio" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModulePhysics" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModulePhysics2D" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModuleUI" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModuleSprite" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModuleAudio" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModulePhysics" preserve="all"/>
+		<type fullname="DG.Tweening.DOTweenModulePhysics2D" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="Assembly-CSharp">
+	    <type fullname="MyGame.LuaUIView" preserve="all"/>
+		<type fullname="MyGame.UIUtility" preserve="all"/>
+		<type fullname="MyGame.AIAgent" preserve="all"/>
+		<type fullname="MyGame.BaseAgent" preserve="all"/>
+		<type fullname="MyGame.Player" preserve="all"/>
+		<type fullname="MyGame.PlayMode" preserve="all"/>
+		<type fullname="MyGame.AgentComponent" preserve="all"/>
+		<type fullname="MyGame.AgentBaseComponent" preserve="all"/>
+		<type fullname="MyGame.AIComponent" preserve="all"/>
+		<type fullname="MyGame.DdzComponent" preserve="all"/>
+		<type fullname="MyGame.PlayerDdzComponent" preserve="all"/>
+		<type fullname="MyGame.NetComponent" preserve="all"/>
+		<type fullname="MyGame.SingleGameComponent" preserve="all"/>
+		<type fullname="MyGame.GameState" preserve="all"/>
+		<type fullname="MyGame.SingleRoomComponent" preserve="all"/>
+		<type fullname="MyGame.GameEntry" preserve="all"/>
+		<type fullname="MyGame.Card" preserve="all"/>
+		<type fullname="MyGame.ddzAI" preserve="all"/>
+		<type fullname="MyGame.CardGroup" preserve="all"/>
+		<type fullname="MyGame.CardGroupType" preserve="all"/>
+		<type fullname="MyGame.DdzUtility" preserve="all"/>
+		<type fullname="MyGame.SuitType" preserve="all"/>
+		<type fullname="MyGame.CardLevel" preserve="all"/>
+		<type fullname="MyGame.CardType" preserve="all"/>
+		<type fullname="MyGame.UIFormId" preserve="all"/>
+		<type fullname="MyGame.OnGameOverEventArgs" preserve="all"/>
+		<type fullname="MyGame.OnGameReadyEventArgs" preserve="all"/>
+		<type fullname="MyGame.OnPlayEventArgs" preserve="all"/>
+		<type fullname="MyGame.OnSignInEventArgs" preserve="all"/>
+		<type fullname="MyGame.CommandEventArgs" preserve="all"/>
+		<type fullname="MyGame.PacketHandlerEventArgs" preserve="all"/>
+		<type fullname="MyGame.BaseGame" preserve="all"/>
+		<type fullname="MyGame.MainGame" preserve="all"/>
+		<type fullname="MyGame.LubanComponent" preserve="all"/>
+		<type fullname="MyGame.PacketHandlerBase" preserve="all"/>
+		<type fullname="MyGame.HeartBeatPacketHandler" preserve="all"/>
+		<type fullname="MyGame.OnGameOverPacketHandler" preserve="all"/>
+		<type fullname="MyGame.OnGameReadyPacketHandler" preserve="all"/>
+		<type fullname="MyGame.OnGameStartPacketHandler" preserve="all"/>
+		<type fullname="MyGame.OnRequestMasterPacketHandler" preserve="all"/>
+		<type fullname="MyGame.PacketRequestHanderBase" preserve="all"/>
+		<type fullname="MyGame.PushPacketHandler" preserve="all"/>
+		<type fullname="MyGame.GetRoomInfoPacketHandler" preserve="all"/>
+		<type fullname="MyGame.JoinRoomPacketHandler" preserve="all"/>
+		<type fullname="MyGame.PacketResponseHandlerBase" preserve="all"/>
+		<type fullname="MyGame.RegisterPacketHandler" preserve="all"/>
+		<type fullname="MyGame.SignInPacketHandler" preserve="all"/>
+		<type fullname="MyGame.BaseSprotoPacketHandler" preserve="all"/>
+		<type fullname="MyGame.C2SSprotoPacketHandler" preserve="all"/>
+		<type fullname="MyGame.S2CSprotoPacketHandler" preserve="all"/>
+		<type fullname="MyGame.NetworkChannelHelperSimpleSproto" preserve="all"/>
+		<type fullname="MyGame.NetworkChannelHelperSproto" preserve="all"/>
+		<type fullname="MyGame.C2SPacketBase" preserve="all"/>
+		<type fullname="MyGame.GetRoomInfoPacket" preserve="all"/>
+		<type fullname="MyGame.JoinRoomPacket" preserve="all"/>
+		<type fullname="MyGame.LeaveRoomPacket" preserve="all"/>
+		<type fullname="MyGame.OnCommandPacket" preserve="all"/>
+		<type fullname="MyGame.PingPacket" preserve="all"/>
+		<type fullname="MyGame.RegisterPacket" preserve="all"/>
+		<type fullname="MyGame.SignInPacket" preserve="all"/>
+		<type fullname="MyGame.SignOutPacket" preserve="all"/>
+		<type fullname="MyGame.BasePacketHeader" preserve="all"/>
+		<type fullname="MyGame.PacketHeaderSproto" preserve="all"/>
+		<type fullname="MyGame.PacketBase" preserve="all"/>
+		<type fullname="MyGame.PacketFactory" preserve="all"/>
+		<type fullname="MyGame.HeartBeatPacket" preserve="all"/>
+		<type fullname="MyGame.OnGameOverPacket" preserve="all"/>
+		<type fullname="MyGame.OnGameReadyPacket" preserve="all"/>
+		<type fullname="MyGame.OnGameStartPacket" preserve="all"/>
+		<type fullname="MyGame.OnJoinRoomPacket" preserve="all"/>
+		<type fullname="MyGame.OnLeaveRoomPacket" preserve="all"/>
+		<type fullname="MyGame.OnPlayPacket" preserve="all"/>
+		<type fullname="MyGame.OnRequestMasterPacket" preserve="all"/>
+		<type fullname="MyGame.OnUserReadyPacket" preserve="all"/>
+		<type fullname="MyGame.PushPacket" preserve="all"/>
+		<type fullname="MyGame.S2CPacketBase" preserve="all"/>
+		<type fullname="MyGame.C2SSprotoPacket" preserve="all"/>
+		<type fullname="MyGame.S2CSprotoPacket" preserve="all"/>
+		<type fullname="MyGame.SprotoPacket" preserve="all"/>
+		<type fullname="MyGame.SprotoPacketFactory" preserve="all"/>
+		<type fullname="MyGame.PacketType" preserve="all"/>
+		<type fullname="MyGame.HandlerType" preserve="all"/>
+		<type fullname="MyGame.ProcedureBase" preserve="all"/>
+		<type fullname="MyGame.ProcedureChangeScene" preserve="all"/>
+		<type fullname="MyGame.ProcedureCheckResource" preserve="all"/>
+		<type fullname="MyGame.ProcedureInitResource" preserve="all"/>
+		<type fullname="MyGame.ProcedureJoinRoom" preserve="all"/>
+		<type fullname="MyGame.ProcedureLaunch" preserve="all"/>
+		<type fullname="MyGame.ProcedureMain" preserve="all"/>
+		<type fullname="MyGame.ProcedureMenu" preserve="all"/>
+		<type fullname="MyGame.ProcedurePreload" preserve="all"/>
+		<type fullname="MyGame.ProcedureSignIn" preserve="all"/>
+		<type fullname="MyGame.ResourceExtension" preserve="all"/>
+		<type fullname="MyGame.CardShow" preserve="all"/>
+		<type fullname="MyGame.CardUnit" preserve="all"/>
+		<type fullname="MyGame.CardState" preserve="all"/>
+		<type fullname="MyGame.PlayerView" preserve="all"/>
+		<type fullname="MyGame.SelectionWindowUIFormLogic" preserve="all"/>
+		<type fullname="MyGame.CommandParams" preserve="all"/>
+		<type fullname="MyGame.CommandMode" preserve="all"/>
+		<type fullname="MyGame.DialogParams" preserve="all"/>
+		<type fullname="MyGame.RoomParams" preserve="all"/>
+		<type fullname="MyGame.PlayerUIData" preserve="all"/>
+		<type fullname="MyGame.AssetUtility" preserve="all"/>
+		<type fullname="MyGame.Injection" preserve="all"/>
+		<type fullname="MyGame.XluaComponent" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="UnityEngine.CoreModule">
+	    <type fullname="UnityEngine.WaitForSeconds" preserve="all"/>
+		<type fullname="UnityEngine.MonoBehaviour" preserve="all"/>
+		<type fullname="UnityEngine.GameObject" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="mscorlib">
+	    <type fullname="System.Collections.IEnumerator" preserve="all"/>
+		<type fullname="System.Collections.Stack" preserve="all"/>
+		
+	</assembly>
+
+</linker>

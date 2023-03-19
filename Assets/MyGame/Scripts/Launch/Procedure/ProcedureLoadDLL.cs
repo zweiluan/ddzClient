@@ -7,7 +7,7 @@ using HybridCLR;
 using MyGame.Launch;
 using UnityEngine;
 
-namespace MyGame.Lanuch
+namespace MyGame.Launch
 {
     public class ProcedureLoadDLL : ProcedureBase
     {
@@ -73,7 +73,7 @@ namespace MyGame.Lanuch
             string fullName = AssetUtility.GetDllPath(dllName);
             m_LoadedFlag.Add(fullName,false);
             GameEntry.Resource.LoadAsset(fullName,
-                new LoadAssetCallbacks(LoadDllAssetSuccess),this);
+                new LoadAssetCallbacks(LoadAotDllAssetSuccess),this);
         }
 
         void LoadDLL(string dllName)
@@ -116,8 +116,6 @@ namespace MyGame.Lanuch
             Debug.Log($"LoadMetadataForAOTAssembly:{assetName}. mode:{mode} ret:{err}");
            
         }
-
         #endregion
-        
     }
 }

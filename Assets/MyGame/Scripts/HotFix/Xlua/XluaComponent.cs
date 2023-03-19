@@ -40,7 +40,10 @@ namespace MyGame
                         return false;
                     }
                 }
-
+                if (m_luaScripts.Count==0)
+                {
+                    return false;
+                }
                 m_Ready = true;
                 return true;
             }
@@ -48,18 +51,7 @@ namespace MyGame
 
         private bool m_Ready;
 
-        public LuaEnv LuaEnv
-        {
-            get
-            {
-                if (m_LuaEnv == null)
-                {
-                    m_LuaEnv=new LuaEnv();
-                }
-
-                return m_LuaEnv;
-            }
-        }
+        public LuaEnv LuaEnv => m_LuaEnv;
 
         private LuaEnv m_LuaEnv;
 
@@ -72,6 +64,7 @@ namespace MyGame
             {
                 m_LuaInitCallback = callback;
             }
+            m_LuaEnv = new LuaEnv();
             this.LuaEnv.AddLoader(CustomLoader);
             m_Ready = false;
             m_luaScripts=new Dictionary<string, byte[]>();
@@ -88,33 +81,39 @@ namespace MyGame
 
         private void Update()
         {
-            if (this.LuaEnv != null)
-            {
-                this.LuaEnv.Tick();
-            }
+            this.LuaEnv?.Tick();
         }
 
         private void OnDestroy()
         {
-            this.LuaEnv.Dispose();
+            this.LuaEnv?.Dispose();
         }
 
         void PreLoadLua()
         {
             Regex m_Regex=new Regex(@"^Assets/MyGame/LuaScripts/Lualibs/\w*.lua.txt$");
-                foreach (var path in GameEntry.Resource.GetAllAssetPaths())
+                // foreach (var path in GameEntry.Resource.GetAllAssetPaths())
+                // {
+                //     // Debug.Log(path);
+                //     // if (path.Contains(".lua.txt"))
+                //     if(m_Regex.IsMatch(path))
+                //     {
+                //         // Debug.Log(path);
+                //         Log.Info(path);
+                //         m_luaScripts.Add(path,null);
+                //         GameEntry.Resource.LoadAsset(path,new LoadAssetCallbacks(LoadLuaAssetSuccess));
+                //     }
+                //         
+                // }
+                GameEntry.Resource.AllAssetPathsForEach((path) =>
                 {
-                    // Debug.Log(path);
-                    // if (path.Contains(".lua.txt"))
                     if(m_Regex.IsMatch(path))
                     {
-                        Debug.Log(path);
+                        // Log.Info(path);
                         m_luaScripts.Add(path,null);
                         GameEntry.Resource.LoadAsset(path,new LoadAssetCallbacks(LoadLuaAssetSuccess));
                     }
-                        
-                }
-
+                });
                 StartCoroutine(CheckPreloadFinish());
         }
         IEnumerator CheckPreloadFinish()

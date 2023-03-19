@@ -34,6 +34,11 @@ namespace MyGame
                         return false;
                     }
                 }
+
+                if (m_DataTableJsons.Count==0)
+                {
+                    return false;
+                }
                 m_Ready = true;
                 return true;
             }
@@ -44,6 +49,8 @@ namespace MyGame
             {
                 m_InitCallbcak = callback;
             }
+
+            m_Ready = false;
             // Debug.Log(Time.time);
             m_DataTableJsons=new Dictionary<string, string>();
             PreloadDataTable();
@@ -53,15 +60,24 @@ namespace MyGame
         void PreloadDataTable()
         {
             Regex m_Regex=new Regex(@"^Assets/MyGame/DataTable/Luban/\w*.json$");
-            foreach (var path in GameEntry.Resource.GetAllAssetPaths())
+            GameEntry.Resource.AllAssetPathsForEach((path) =>
             {
                 if(m_Regex.IsMatch(path))
                 {
-                    // Debug.Log(path);
+                    Log.Info(path);
                     m_DataTableJsons.Add(path,null);
                     GameEntry.Resource.LoadAsset(path,new LoadAssetCallbacks(LoadJsonAssetSuccess));
                 }
-            }
+            });
+            // foreach (var path in GameEntry.Resource.GetAllAssetPaths())
+            // {
+            //     if(m_Regex.IsMatch(path))
+            //     {
+            //         Log.Info(path);
+            //         m_DataTableJsons.Add(path,null);
+            //         GameEntry.Resource.LoadAsset(path,new LoadAssetCallbacks(LoadJsonAssetSuccess));
+            //     }
+            // }
             StartCoroutine(BuildInInit());
         }
         IEnumerator BuildInInit()

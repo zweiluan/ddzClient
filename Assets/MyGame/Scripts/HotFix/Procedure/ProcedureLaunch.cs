@@ -26,9 +26,13 @@ namespace MyGame
                 ChangeState<ProcedureInitResource>(procedureOwner);
             }else
             {
-                ChangeState<ProcedureUpdataResource>(procedureOwner);
+                ChangeState<ProcedureCheckResource>(procedureOwner);
             }
-            
+            //不进行更新资源，资源更新部分由launch部分完成。这个部分直接负责资源初始化
+            // else
+            // {
+            //     ChangeState<ProcedureInitResource>(procedureOwner);
+            // }
         }
     }
 }

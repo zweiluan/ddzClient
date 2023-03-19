@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityGameFramework.Runtime;
 using GameEntry = MyGame.Launch.GameEntry;
 
-namespace MyGame.Lanuch
+namespace MyGame.Launch
 {
     public static class ResourceExtension
     {

@@ -1,5 +1,6 @@
 ﻿using GameFramework.Fsm;
 using GameFramework.Procedure;
+using GameFramework.Resource;
 using UnityGameFramework.Runtime;
 
 namespace MyGame
@@ -10,7 +11,10 @@ namespace MyGame
         protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            GameEntry.Resource.InitResources(OnInitResourcesComplete);
+            Log.Info("资源初始化");
+            {
+                GameEntry.Resource.InitResources(OnInitResourcesComplete);
+            }
         }
 
         protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -26,5 +30,6 @@ namespace MyGame
             m_InitResourcesComplete = true;
             Log.Info("Init resources complete.");
         }
+
     }
 }

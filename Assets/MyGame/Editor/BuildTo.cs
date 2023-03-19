@@ -1,7 +1,7 @@
 using System.IO;
 using HybridCLR.Editor;
 using HybridCLR.Editor.Commands;
-using MyGame.Lanuch;
+using MyGame.Launch;
 using UnityEditor;
 using UnityEngine;
 

@@ -21,8 +21,9 @@ namespace MyGame
             GameEntry.Event.Subscribe(UnityGameFramework.Runtime.NetworkConnectedEventArgs.EventId, OnNetworkConnected);
             Connect();
             //通过配置打开UI
-            string st = GameEntry.Luban.Tables.TbUIForm.Get((int)UIFormId.SignIn).Path;
-            uiformid=GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAssetPath(st), "Default",this);
+            var st = GameEntry.Luban.Tables.TbUIForm.Get((int)UIFormId.SignIn);
+           
+            uiformid=GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAssetPath(st.Path), st.Group,this);
         }
         public override void Update()
         {

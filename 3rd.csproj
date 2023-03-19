@@ -57,6 +57,7 @@
      <Compile Include="Assets\3rd\sproto\src\SprotoTypeFieldOP.cs" />
      <Compile Include="Assets\3rd\sproto\src\SprotoTypeSize.cs" />
      <Compile Include="Assets\3rd\sproto\src\ProtocolBase.cs" />
+     <Compile Include="Assets\3rd\RefType.cs" />
      <Compile Include="Assets\3rd\sproto\src\ProtocolFunctionDictionary.cs" />
      <Compile Include="Assets\3rd\sproto\src\SprotoTypeReader.cs" />
      <Compile Include="Assets\3rd\sproto\src\SprotoTypeBase.cs" />

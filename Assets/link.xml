@@ -4,6 +4,7 @@
   <assembly fullname="UnityGameFramework.Runtime" preserve="all" />
   <assembly fullname="MyGame.Launch" preserve="all" />
   <assembly fullname="UnityEngine.CoreModule" preserve="all"/>
+
   <assembly fullname="UnityEngine.Physics2DModule" preserve="all" />
   <assembly fullname="UnityEngine.AnimationModule" preserve="all" />
   <assembly fullname="UnityEngine.NVIDIAModule" preserve="all" />
@@ -18,6 +19,6 @@
   <assembly fullname="UnityEngine.UIModule" preserve="all" />
   <assembly fullname="UnityEngine.UnityAnalyticsModule" preserve="all" />
   <assembly fullname="3rd" preserve="all" />
-<!--  <assembly fullname="XLua.DLL" preserve="all" />-->
   <assembly fullname="DG.Tweening" preserve="all" />
+  <assembly fullname="Unity.RenderPipelines.Core.Runtime" preserve="all"/>
 </linker>

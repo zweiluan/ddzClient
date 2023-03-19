@@ -1,6 +1,6 @@
 ﻿using UnityGameFramework.Runtime;
 
-namespace MyGame.Scripts.UI.Utility
+namespace MyGame
 {
     public static class UIUtility
     {

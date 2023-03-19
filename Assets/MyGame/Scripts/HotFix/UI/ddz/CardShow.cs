@@ -136,25 +136,32 @@ namespace MyGame
                     if (cardLs.Length%2==0)
                     {
                         mid = cardLs.Length / 2 - 0.5f;
-                        bpos = transform.position + Vector3.left * mid*offset;
+                        bpos = Vector3.left * mid*offset;
                 
                     }
                     else
                     {
                         mid = (cardLs.Length+1) / 2-0.5f;
-                        bpos = transform.position + Vector3.left * (mid-0.5f)*offset;
+                        bpos = Vector3.left * (mid-0.5f)*offset;
                     }
                 }
                 else if (cardLs.Length<17)
                 {
-                    bpos = transform.position + Vector3.left * 6.5f*offset;
+                    bpos =  Vector3.left * 6.5f*offset;
                 }else
                 {
-                    bpos = transform.position + (Vector3.right * rootoffset+ Vector3.left * cardLs.Length) * offset;
+                    bpos = (Vector3.right * rootoffset+ Vector3.left * cardLs.Length) * offset;
                 }
                 foreach (var go in cards)
                 {
-                    go.transform.position = bpos;
+                    var rect= go.GetComponent<RectTransform>();
+                    // rect.anchorMin = Vector2.zero;
+                    // rect.anchorMax = Vector2.zero;
+                    // Vector2 anchoredPosition = rect.anchoredPosition;
+                    // anchoredPosition[0] = (bpos.x + bpos.x * rect.pivot[0] * 1) ;
+                    // rect.anchoredPosition = anchoredPosition;
+                    rect.anchoredPosition3D = bpos;
+                    // go.transform.position = bpos;
                     bpos += Vector3.right * offset;
                 }
             }
@@ -209,6 +216,10 @@ namespace MyGame
             cardpool.Clear();
         }
 
+        // private void OnValidate()
+        // {
+        //     OnShow(cacheCards);
+        // }
         // private void OnValidate()
         // {
         //     OnShow();

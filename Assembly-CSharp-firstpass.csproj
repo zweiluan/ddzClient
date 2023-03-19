@@ -953,10 +953,6 @@
       <Project>{04cd0fab-e04a-7191-41b4-ddc827503c93}</Project>
       <Name>MyGame.Launch</Name>
     </ProjectReference>
-    <ProjectReference Include="Animancer.Examples.csproj">
-      <Project>{41802603-6642-0471-bc6b-a43225f9f0b8}</Project>
-      <Name>Animancer.Examples</Name>
-    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{f21443e2-f27f-2ba8-90cf-db4d4a5ceb03}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>

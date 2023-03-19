@@ -2,7 +2,7 @@
 {
     public partial class GameEntry
     {
-        public HotFixComponent Hotfix
+        public static HotFixComponent Hotfix
         {
             get;
             private set;

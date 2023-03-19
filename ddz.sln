@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animancer.Examples", "Animancer.Examples.csproj", "{41802603-6642-0471-bc6b-a43225f9f0b8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6d1e5509-4ea4-7b0a-d9d9-2d20a670e4d2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityGameFramework.Runtime", "UnityGameFramework.Runtime.csproj", "{245f8a81-87be-d940-bccd-093aa11bdb5c}"
@@ -32,8 +30,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{41802603-6642-0471-bc6b-a43225f9f0b8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41802603-6642-0471-bc6b-a43225f9f0b8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6d1e5509-4ea4-7b0a-d9d9-2d20a670e4d2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6d1e5509-4ea4-7b0a-d9d9-2d20a670e4d2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{245f8a81-87be-d940-bccd-093aa11bdb5c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

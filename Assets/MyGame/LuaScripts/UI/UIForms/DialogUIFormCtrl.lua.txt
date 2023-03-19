@@ -5,10 +5,11 @@ local msg
 local function close()
     CS.MyGame.GameEntry.Base:StartCoroutine(util.cs_generator(
             function()
-                cg:DOFade(0,0.2); 
+                cg:DOFade(0,0.2);
                 coroutine.yield(CS.UnityEngine.WaitForSeconds(0.2))
-                --CS.MyGame.HotFix.GameEntry.UI:CloseDialogUI()
-                --CS.MyGame.GameEntry.UI:CloseDialogUI()
+                CS.MyGame.GameEntry.UI:CloseDialogUI()
+                --CS.MyGame.UIUtility.CloseDialogUI(CS.MyGame.GameEntry.UI)
+                --print("无法关闭窗口，不知道为什么")
     end))
 end
 function OnInit(userdata)

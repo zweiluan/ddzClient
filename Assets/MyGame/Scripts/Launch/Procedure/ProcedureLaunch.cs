@@ -2,7 +2,7 @@
 using GameFramework.Procedure;
 using UnityEngine;
 
-namespace MyGame.Lanuch
+namespace MyGame.Launch
 {
     public class ProcedureLaunch : ProcedureBase
     {

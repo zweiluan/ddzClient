@@ -2,6 +2,11 @@
 
 namespace XLua
 {
+    public struct GCAction
+    {
+        public int Reference;
+        public bool IsDelegate;
+    }
     public enum LuaTypes
     {
         LUA_TNONE = -1,

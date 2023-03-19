@@ -13,196 +13,240 @@ using System.Reflection;
 using System.Linq;
 using UnityEngine;
 
+
 //配置的详细介绍请看Doc下《XLua的配置.doc》
 public static class ExampleConfig
 {
+    [LuaCallCSharp] [ReflectionUse] 
+    public static List<Type> dotween_lua_call_cs_list = new List<Type>()
+    {
+        typeof(DG.Tweening.AutoPlay),
+        typeof(DG.Tweening.AxisConstraint),
+        typeof(DG.Tweening.Ease),
+        typeof(DG.Tweening.LogBehaviour),
+        typeof(DG.Tweening.LoopType),
+        typeof(DG.Tweening.PathMode),
+        typeof(DG.Tweening.PathType),
+        typeof(DG.Tweening.RotateMode),
+        typeof(DG.Tweening.ScrambleMode),
+        typeof(DG.Tweening.TweenType),
+        typeof(DG.Tweening.UpdateType),
+    
+        typeof(DG.Tweening.DOTween),
+        typeof(DG.Tweening.DOVirtual),
+        typeof(DG.Tweening.EaseFactory),
+        typeof(DG.Tweening.Tweener),
+        typeof(DG.Tweening.Tween),
+        typeof(DG.Tweening.Sequence),
+        typeof(DG.Tweening.TweenParams),
+        typeof(DG.Tweening.Core.ABSSequentiable),
+    
+        typeof(DG.Tweening.Core.TweenerCore<Vector3, Vector3, DG.Tweening.Plugins.Options.VectorOptions>),
+        typeof(DG.Tweening.Core.TweenerCore<Color, Color, DG.Tweening.Plugins.Options.ColorOptions>),
+        typeof(DG.Tweening.Core.TweenerCore<float, float, DG.Tweening.Plugins.Options.FloatOptions>),
+    
+        typeof(DG.Tweening.TweenCallback),
+        typeof(DG.Tweening.TweenExtensions),
+        typeof(DG.Tweening.TweenSettingsExtensions),
+        typeof(DG.Tweening.ShortcutExtensions),
+        typeof(DG.Tweening.DOTweenModuleUI),
+        typeof(DG.Tweening.DOTweenModuleSprite),
+        typeof(DG.Tweening.DOTweenModuleAudio),
+        typeof(DG.Tweening.DOTweenModulePhysics),
+        typeof(DG.Tweening.DOTweenModulePhysics2D)
+    };
+    
+    [LuaCallCSharp]
+    public static List<Type> action=>new List<Type>()
+    {
+        typeof(Action<object>),
+        typeof(Action<float,float>)
+    };
+    [LuaCallCSharp]
+    public static List<Type> coroutine=>new List<Type>()
+    {
+        typeof(WaitForSeconds),
+        typeof(MonoBehaviour),
+        typeof(GameObject),
+        typeof(System.Collections.IEnumerator),
+        typeof(System.Collections.Stack),
+        typeof(MyGame.UIUtility),
+    };
+    [CSharpCallLua]
+    public static List<Type> coroutine1=>new List<Type>()
+    {
+        typeof(WaitForSeconds),
+        typeof(MonoBehaviour),
+        typeof(GameObject),
+        typeof(System.Collections.IEnumerator),
+        typeof(System.Collections.Stack),
+        typeof(MyGame.UIUtility),
+    };
+    [LuaCallCSharp]
+    public static List<Type> myGame{
+        get
+        {
+            return (from type in Assembly.Load("Assembly-CSharp").GetTypes()
+                where type.Namespace == "MyGame"
+                select type).ToList();
+        }
+    }
+    [LuaCallCSharp]
+    public static List<Type> uGF{
+        get
+        {
+            return (from type in Assembly.Load("Assembly-CSharp").GetTypes()
+                where type.Namespace == "UnityGameFramework.Runtime"
+                select type).ToList();
+        }
+    }
+    [Hotfix]
+    public static List<Type> by_property
+    {
+        get
+        {
+            return (from type in Assembly.Load("Assembly-CSharp").GetTypes()
+                where type.Namespace == "MyGame"
+                select type).ToList();
+        }
+    }
     /***************如果你全lua编程，可以参考这份自动化配置***************/
     // --------------begin 纯lua编程配置参考----------------------------
-    // static List<string> exclude = new List<string> {
-    //     "HideInInspector", "ExecuteInEditMode",
-    //     "AddComponentMenu", "ContextMenu",
-    //     "RequireComponent", "DisallowMultipleComponent",
-    //     "SerializeField", "AssemblyIsEditorAssembly",
-    //     "Attribute", "Types",
-    //     "UnitySurrogateSelector", "TrackedReference",
-    //     "TypeInferenceRules", "FFTWindow",
-    //     "RPC", "Network", "MasterServer",
-    //     "BitStream", "HostData",
-    //     "ConnectionTesterStatus", "GUI", "EventType",
-    //     "EventModifiers", "FontStyle", "TextAlignment",
-    //     "TextEditor", "TextEditorDblClickSnapping",
-    //     "TextGenerator", "TextClipping", "Gizmos",
-    //     "ADBannerView", "ADInterstitialAd",
-    //     "Android", "Tizen", "jvalue",
-    //     "iPhone", "iOS", "Windows", "CalendarIdentifier",
-    //     "CalendarUnit", "CalendarUnit",
-    //     "ClusterInput", "FullScreenMovieControlMode",
-    //     "FullScreenMovieScalingMode", "Handheld",
-    //     "LocalNotification", "NotificationServices",
-    //     "RemoteNotificationType", "RemoteNotification",
-    //     "SamsungTV", "TextureCompressionQuality",
-    //     "TouchScreenKeyboardType", "TouchScreenKeyboard",
-    //     "MovieTexture", "UnityEngineInternal",
-    //     "Terrain", "Tree", "SplatPrototype",
-    //     "DetailPrototype", "DetailRenderMode",
-    //     "MeshSubsetCombineUtility", "AOT", "Social", "Enumerator",
-    //     "SendMouseEvents", "Cursor", "Flash", "ActionScript",
-    //     "OnRequestRebuild", "Ping",
-    //     "ShaderVariantCollection", "SimpleJson.Reflection",
-    //     "CoroutineTween", "GraphicRebuildTracker",
-    //     "Advertisements", "UnityEditor", "WSA",
-    //     "EventProvider", "Apple",
-    //     "ClusterInput", "Motion",
-    //     "UnityEngine.UI.ReflectionMethodsCache", "NativeLeakDetection",
-    //     "NativeLeakDetectionMode", "WWWAudioExtensions", "UnityEngine.Experimental",
-    // };
-    //
-    // static bool isExcluded(Type type)
-    // {
-    //     var fullName = type.FullName;
-    //     for (int i = 0; i < exclude.Count; i++)
-    //     {
-    //         if (fullName.Contains(exclude[i]))
-    //         {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
-    //
-    // [LuaCallCSharp] [ReflectionUse] public static List<Type> dotween_lua_call_cs_list = new List<Type>()
-    // {
-    //     typeof(DG.Tweening.AutoPlay),
-    //     typeof(DG.Tweening.AxisConstraint),
-    //     typeof(DG.Tweening.Ease),
-    //     typeof(DG.Tweening.LogBehaviour),
-    //     typeof(DG.Tweening.LoopType),
-    //     typeof(DG.Tweening.PathMode),
-    //     typeof(DG.Tweening.PathType),
-    //     typeof(DG.Tweening.RotateMode),
-    //     typeof(DG.Tweening.ScrambleMode),
-    //     typeof(DG.Tweening.TweenType),
-    //     typeof(DG.Tweening.UpdateType),
-    //
-    //     typeof(DG.Tweening.DOTween),
-    //     typeof(DG.Tweening.DOVirtual),
-    //     typeof(DG.Tweening.EaseFactory),
-    //     typeof(DG.Tweening.Tweener),
-    //     typeof(DG.Tweening.Tween),
-    //     typeof(DG.Tweening.Sequence),
-    //     typeof(DG.Tweening.TweenParams),
-    //     typeof(DG.Tweening.Core.ABSSequentiable),
-    //
-    //     typeof(DG.Tweening.Core.TweenerCore<Vector3, Vector3, DG.Tweening.Plugins.Options.VectorOptions>),
-    //     typeof(DG.Tweening.Core.TweenerCore<Color, Color, DG.Tweening.Plugins.Options.ColorOptions>),
-    //     typeof(DG.Tweening.Core.TweenerCore<float, float, DG.Tweening.Plugins.Options.FloatOptions>),
-    //
-    //     typeof(DG.Tweening.TweenCallback),
-    //     typeof(DG.Tweening.TweenExtensions),
-    //     typeof(DG.Tweening.TweenSettingsExtensions),
-    //     typeof(DG.Tweening.ShortcutExtensions),
-    //     typeof(DG.Tweening.DOTweenModuleUI),
-    //     typeof(DG.Tweening.DOTweenModuleSprite),
-    //     typeof(DG.Tweening.DOTweenModuleAudio),
-    //     typeof(DG.Tweening.DOTweenModulePhysics),
-    //     typeof(DG.Tweening.DOTweenModulePhysics2D)
-    // };
-    //
-    // [CSharpCallLua]
-    // public static List<Type> action=>new List<Type>()
-    // {
-    //     typeof(Action<object>),
-    //     typeof(Action<float,float>)
-    // };
-    // [CSharpCallLua]
-    // public static List<Type> coroutine=>new List<Type>()
-    // {
-    //     typeof(WaitForSeconds),
-    //     typeof(MonoBehaviour),
-    //
-    // };
-    // [LuaCallCSharp]
-    // public static IEnumerable<Type> LuaCallCSharp
-    // {
-    //     get
-    //     {
-    //         List<string> namespaces = new List<string>() // 在这里添加名字空间
-    //         {
-    //             "UnityEngine",
-    //             "UnityEngine.UI"
-    //         };
-    //         var unityTypes = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-    //                           where !(assembly.ManifestModule is System.Reflection.Emit.ModuleBuilder)
-    //                           from type in assembly.GetExportedTypes()
-    //                           where type.Namespace != null && namespaces.Contains(type.Namespace) && !isExcluded(type)
-    //                                   && type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum
-    //                           select type);
-    //
-    //         string[] customAssemblys = new string[] {
-    //             "Assembly-CSharp",
-    //             "MyGame.Launch",
-    //             "MyGame.HotFix",
-    //             "3rd"
-    //         };
-    //         var customTypes = (from assembly in customAssemblys.Select(s => Assembly.Load(s))
-    //                            from type in assembly.GetExportedTypes()
-    //                            where type.Namespace == null || !type.Namespace.StartsWith("XLua")
-    //                                    && type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum
-    //                            select type);
-    //         return unityTypes.Concat(customTypes);
-    //     }
-    // }
-    //
-    // //自动把LuaCallCSharp涉及到的delegate加到CSharpCallLua列表，后续可以直接用lua函数做callback
-    // [CSharpCallLua]
-    // public static List<Type> CSharpCallLua
-    // {
-    //     get
-    //     {
-    //         var lua_call_csharp = LuaCallCSharp;
-    //         var delegate_types = new List<Type>();
-    //         var flag = BindingFlags.Public | BindingFlags.Instance
-    //             | BindingFlags.Static | BindingFlags.IgnoreCase | BindingFlags.DeclaredOnly;
-    //         foreach (var field in (from type in lua_call_csharp select type).SelectMany(type => type.GetFields(flag)))
-    //         {
-    //             if (typeof(Delegate).IsAssignableFrom(field.FieldType))
-    //             {
-    //                 delegate_types.Add(field.FieldType);
-    //             }
-    //         }
-    //
-    //         foreach (var method in (from type in lua_call_csharp select type).SelectMany(type => type.GetMethods(flag)))
-    //         {
-    //             if (typeof(Delegate).IsAssignableFrom(method.ReturnType))
-    //             {
-    //                 delegate_types.Add(method.ReturnType);
-    //             }
-    //             foreach (var param in method.GetParameters())
-    //             {
-    //                 var paramType = param.ParameterType.IsByRef ? param.ParameterType.GetElementType() : param.ParameterType;
-    //                 if (typeof(Delegate).IsAssignableFrom(paramType))
-    //                 {
-    //                     delegate_types.Add(paramType);
-    //                 }
-    //             }
-    //         }
-    //         return delegate_types.Where(t => t.BaseType == typeof(MulticastDelegate) && !hasGenericParameter(t) && !delegateHasEditorRef(t)).Distinct().ToList();
-    //     }
-    // }
-    // // --------------end 纯lua编程配置参考----------------------------
-    //
-    // /***************热补丁可以参考这份自动化配置***************/
-    // [Hotfix]
-    // static IEnumerable<Type> HotfixInject
-    // {
-    //     get
-    //     {
-    //         return (from type in Assembly.Load("Assembly-CSharp").GetTypes()
-    //                 where type.Namespace == null || !type.Namespace.StartsWith("XLua")
-    //                 select type);
-    //     }
-    // }
-    // // --------------begin 热补丁自动化配置-------------------------
+     // static List<string> exclude = new List<string> {
+     //     "HideInInspector", "ExecuteInEditMode",
+     //     "AddComponentMenu", "ContextMenu",
+     //     "RequireComponent", "DisallowMultipleComponent",
+     //     "SerializeField", "AssemblyIsEditorAssembly",
+     //     "Attribute", "Types",
+     //     "UnitySurrogateSelector", "TrackedReference",
+     //     "TypeInferenceRules", "FFTWindow",
+     //     "RPC", "Network", "MasterServer",
+     //     "BitStream", "HostData",
+     //     "ConnectionTesterStatus", "GUI", "EventType",
+     //     "EventModifiers", "FontStyle", "TextAlignment",
+     //     "TextEditor", "TextEditorDblClickSnapping",
+     //     "TextGenerator", "TextClipping", "Gizmos",
+     //     "ADBannerView", "ADInterstitialAd",
+     //     "Android", "Tizen", "jvalue",
+     //     "iPhone", "iOS", "Windows", "CalendarIdentifier",
+     //     "CalendarUnit", "CalendarUnit",
+     //     "ClusterInput", "FullScreenMovieControlMode",
+     //     "FullScreenMovieScalingMode", "Handheld",
+     //     "LocalNotification", "NotificationServices",
+     //     "RemoteNotificationType", "RemoteNotification",
+     //     "SamsungTV", "TextureCompressionQuality",
+     //     "TouchScreenKeyboardType", "TouchScreenKeyboard",
+     //     "MovieTexture", "UnityEngineInternal",
+     //     "Terrain", "Tree", "SplatPrototype",
+     //     "DetailPrototype", "DetailRenderMode",
+     //     "MeshSubsetCombineUtility", "AOT", "Social", "Enumerator",
+     //     "SendMouseEvents", "Cursor", "Flash", "ActionScript",
+     //     "OnRequestRebuild", "Ping",
+     //     "ShaderVariantCollection", "SimpleJson.Reflection",
+     //     "CoroutineTween", "GraphicRebuildTracker",
+     //     "Advertisements", "UnityEditor", "WSA",
+     //     "EventProvider", "Apple",
+     //     "ClusterInput", "Motion",
+     //     "UnityEngine.UI.ReflectionMethodsCache", "NativeLeakDetection",
+     //     "NativeLeakDetectionMode", "WWWAudioExtensions", "UnityEngine.Experimental",
+     //     "UnityEngine.ClusterSerialization","UnityEngine.InputManagerEntry",
+     //     "UnityEngine.InputRegistering","UnityEngine.AnimatorControllerParameter",
+     //     
+     // };
+     //
+     // static bool isExcluded(Type type)
+     // {
+     //     var fullName = type.FullName;
+     //     for (int i = 0; i < exclude.Count; i++)
+     //     {
+     //         if (fullName.Contains(exclude[i]))
+     //         {
+     //             return true;
+     //         }
+     //     }
+     //     return false;
+     // }
+     // //
+     // //
+     // [LuaCallCSharp]
+     // public static IEnumerable<Type> LuaCallCSharp
+     // {
+     //     get
+     //     {
+     //         List<string> namespaces = new List<string>() // 在这里添加名字空间
+     //         {
+     //             "UnityEngine",
+     //             "UnityEngine.UI"
+     //         };
+     //         var unityTypes = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
+     //                           where !(assembly.ManifestModule is System.Reflection.Emit.ModuleBuilder)
+     //                           from type in assembly.GetExportedTypes()
+     //                           where type.Namespace != null && namespaces.Contains(type.Namespace) && !isExcluded(type)
+     //                                   && type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum
+     //                           select type);
+     //
+     //         string[] customAssemblys = new string[] {
+     //             "Assembly-CSharp",
+     //         };
+     //         var customTypes = (from assembly in customAssemblys.Select(s => Assembly.Load(s))
+     //                            from type in assembly.GetExportedTypes()
+     //                            where type.Namespace == null || !type.Namespace.StartsWith("XLua")
+     //                                    && type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum
+     //                            select type);
+     //         return unityTypes.Concat(customTypes);
+     //     }
+     // }
+     //
+     // //自动把LuaCallCSharp涉及到的delegate加到CSharpCallLua列表，后续可以直接用lua函数做callback
+     // [CSharpCallLua]
+     // public static List<Type> CSharpCallLua
+     // {
+     //     get
+     //     {
+     //         var lua_call_csharp = LuaCallCSharp;
+     //         var delegate_types = new List<Type>();
+     //         var flag = BindingFlags.Public | BindingFlags.Instance
+     //             | BindingFlags.Static | BindingFlags.IgnoreCase | BindingFlags.DeclaredOnly;
+     //         foreach (var field in (from type in lua_call_csharp select type).SelectMany(type => type.GetFields(flag)))
+     //         {
+     //             if (typeof(Delegate).IsAssignableFrom(field.FieldType))
+     //             {
+     //                 delegate_types.Add(field.FieldType);
+     //             }
+     //         }
+     //
+     //         foreach (var method in (from type in lua_call_csharp select type).SelectMany(type => type.GetMethods(flag)))
+     //         {
+     //             if (typeof(Delegate).IsAssignableFrom(method.ReturnType))
+     //             {
+     //                 delegate_types.Add(method.ReturnType);
+     //             }
+     //             foreach (var param in method.GetParameters())
+     //             {
+     //                 var paramType = param.ParameterType.IsByRef ? param.ParameterType.GetElementType() : param.ParameterType;
+     //                 if (typeof(Delegate).IsAssignableFrom(paramType))
+     //                 {
+     //                     delegate_types.Add(paramType);
+     //                 }
+     //             }
+     //         }
+     //         return delegate_types.Where(t => t.BaseType == typeof(MulticastDelegate) && !hasGenericParameter(t) && !delegateHasEditorRef(t)).Distinct().ToList();
+     //     }
+     // }
+     // --------------end 纯lua编程配置参考----------------------------
+    
+     /***************热补丁可以参考这份自动化配置***************/
+     // [Hotfix]
+     // static IEnumerable<Type> HotfixInject
+     // {
+     //     get
+     //     {
+     //         return (from type in Assembly.Load("Assembly-CSharp").GetTypes()
+     //                 where type.Namespace == null || !type.Namespace.StartsWith("XLua")
+     //                 select type);
+     //     }
+     // }
+     // --------------begin 热补丁自动化配置-------------------------
     // static bool hasGenericParameter(Type type)
     // {
     //     if (type.IsGenericTypeDefinition) return true;
@@ -223,7 +267,7 @@ public static class ExampleConfig
     //     }
     //     return false;
     // }
-    //
+    // //  //
     // static bool typeHasEditorRef(Type type)
     // {
     //     if (type.Namespace != null && (type.Namespace == "UnityEditor" || type.Namespace.StartsWith("UnityEditor.")))
@@ -254,7 +298,7 @@ public static class ExampleConfig
     //     }
     //     return false;
     // }
-    //
+    // //  //
     // static bool delegateHasEditorRef(Type delegateType)
     // {
     //     if (typeHasEditorRef(delegateType)) return true;
@@ -266,41 +310,41 @@ public static class ExampleConfig
     //     if (typeHasEditorRef(method.ReturnType)) return true;
     //     return method.GetParameters().Any(pinfo => typeHasEditorRef(pinfo.ParameterType));
     // }
-    
-    // 配置某Assembly下所有涉及到的delegate到CSharpCallLua下，Hotfix下拿不准那些delegate需要适配到lua function可以这么配置
-    //[CSharpCallLua]
-    //static IEnumerable<Type> AllDelegate
-    //{
-    //    get
-    //    {
-    //        BindingFlags flag = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public;
-    //        List<Type> allTypes = new List<Type>();
-    //        var allAssemblys = new Assembly[]
-    //        {
-    //            Assembly.Load("Assembly-CSharp")
-    //        };
-    //        foreach (var t in (from assembly in allAssemblys from type in assembly.GetTypes() select type))
-    //        {
-    //            var p = t;
-    //            while (p != null)
-    //            {
-    //                allTypes.Add(p);
-    //                p = p.BaseType;
-    //            }
-    //        }
-    //        allTypes = allTypes.Distinct().ToList();
-    //        var allMethods = from type in allTypes
-    //                         from method in type.GetMethods(flag)
-    //                         select method;
-    //        var returnTypes = from method in allMethods
-    //                          select method.ReturnType;
-    //        var paramTypes = allMethods.SelectMany(m => m.GetParameters()).Select(pinfo => pinfo.ParameterType.IsByRef ? pinfo.ParameterType.GetElementType() : pinfo.ParameterType);
-    //        var fieldTypes = from type in allTypes
-    //                         from field in type.GetFields(flag)
-    //                         select field.FieldType;
-    //        return (returnTypes.Concat(paramTypes).Concat(fieldTypes)).Where(t => t.BaseType == typeof(MulticastDelegate) && !hasGenericParameter(t) && !delegateHasEditorRef(t)).Distinct();
-    //    }
-    //}
+    //
+    //  // 配置某Assembly下所有涉及到的delegate到CSharpCallLua下，Hotfix下拿不准那些delegate需要适配到lua function可以这么配置
+    // [CSharpCallLua]
+    // static IEnumerable<Type> AllDelegate
+    // {
+    //     get
+    //     {
+    //         BindingFlags flag = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public;
+    //         List<Type> allTypes = new List<Type>();
+    //         var allAssemblys = new Assembly[]
+    //         {
+    //             Assembly.Load("Assembly-CSharp")
+    //         };
+    //         foreach (var t in (from assembly in allAssemblys from type in assembly.GetTypes() select type))
+    //         {
+    //             var p = t;
+    //             while (p != null)
+    //             {
+    //                 allTypes.Add(p);
+    //                 p = p.BaseType;
+    //             }
+    //         }
+    //         allTypes = allTypes.Distinct().ToList();
+    //         var allMethods = from type in allTypes
+    //                          from method in type.GetMethods(flag)
+    //                          select method;
+    //         var returnTypes = from method in allMethods
+    //                           select method.ReturnType;
+    //         var paramTypes = allMethods.SelectMany(m => m.GetParameters()).Select(pinfo => pinfo.ParameterType.IsByRef ? pinfo.ParameterType.GetElementType() : pinfo.ParameterType);
+    //         var fieldTypes = from type in allTypes
+    //                          from field in type.GetFields(flag)
+    //                          select field.FieldType;
+    //         return (returnTypes.Concat(paramTypes).Concat(fieldTypes)).Where(t => t.BaseType == typeof(MulticastDelegate) && !hasGenericParameter(t) && !delegateHasEditorRef(t)).Distinct();
+    //     }
+    // }
     //--------------end 热补丁自动化配置-------------------------
 
     //黑名单
@@ -315,6 +359,7 @@ public static class ExampleConfig
                 new List<string>(){"UnityEngine.Security", "GetChainOfTrustValue"},
                 new List<string>(){"UnityEngine.CanvasRenderer", "onRequestRebuild"},
                 new List<string>(){"UnityEngine.Light", "areaSize"},
+                // new List<string>(){"UnityEngine.ClusterSerialization"},
                 new List<string>(){"UnityEngine.Light", "lightmapBakeType"},
                 new List<string>(){"UnityEngine.WWW", "MovieTexture"},
                 new List<string>(){"UnityEngine.WWW", "GetMovieTexture"},

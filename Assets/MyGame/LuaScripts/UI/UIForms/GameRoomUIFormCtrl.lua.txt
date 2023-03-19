@@ -34,20 +34,28 @@ end
 --这个user应该具备所有玩家的代理
 function OnInit(userdata)
     room=userdata
-    extra=extra_card:GetComponent("CardShow")
-    index1= player_1:GetComponent("PlayerView")
-    index2= player_2:GetComponent("PlayerView")
-    index3= player_3:GetComponent("PlayerView")
+    extra=extra_card:GetComponent(typeof(CS.MyGame.CardShow))
+    index1= player_1:GetComponent(typeof(CS.MyGame.PlayerView))
+    index2= player_2:GetComponent(typeof(CS.MyGame.PlayerView))
+    index3= player_3:GetComponent(typeof(CS.MyGame.PlayerView))
+    --extra=extra_card:GetComponent("CardShow")
+    --index1= player_1:GetComponent("PlayerView")
+    --index2= player_2:GetComponent("PlayerView")
+    --index3= player_3:GetComponent("PlayerView")
 end
 function OnOpen(userdata)
     room=userdata
     room.RefreshUiAction= room.RefreshUiAction+ refreshUI
     room.GetSelectedCardsAction=room.GetSelectedCardsAction+get_selected_card
     room.SetSelectedCardsAction=room.SetSelectedCardsAction+set_selected_card
-    extra=extra_card:GetComponent("CardShow")
-    index1= player_1:GetComponent("PlayerView")
-    index2= player_2:GetComponent("PlayerView")
-    index3= player_3:GetComponent("PlayerView")
+    extra=extra_card:GetComponent(typeof(CS.MyGame.CardShow))
+    index1= player_1:GetComponent(typeof(CS.MyGame.PlayerView))
+    index2= player_2:GetComponent(typeof(CS.MyGame.PlayerView))
+    index3= player_3:GetComponent(typeof(CS.MyGame.PlayerView))
+    --extra=extra_card:GetComponent("CardShow")
+    --index1= player_1:GetComponent("PlayerView")
+    --index2= player_2:GetComponent("PlayerView")
+    --index3= player_3:GetComponent("PlayerView")
 end
 function OnClose(userdata)
     room.RefreshUiAction=room.RefreshUiAction-refreshUI

@@ -31,7 +31,6 @@ namespace XLua
         internal static volatile TryArraySet genTryArraySetPtr = null;
         internal static volatile ObjectTranslatorPool objectTranslatorPool = new ObjectTranslatorPool();
         internal static volatile Dictionary<Type, IEnumerable<MethodInfo>> extensionMethodMap = null;
-
 #if GEN_CODE_MINIMIZE
         internal static volatile LuaDLL.CSharpWrapperCaller CSharpWrapperCallerPtr = new LuaDLL.CSharpWrapperCaller(StaticLuaCallbacks.CSharpWrapperCallerImpl);
 #endif

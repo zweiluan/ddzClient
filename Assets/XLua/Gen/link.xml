@@ -178,6 +178,7 @@
 		<type fullname="MyGame.AssetUtility" preserve="all"/>
 		<type fullname="MyGame.Injection" preserve="all"/>
 		<type fullname="MyGame.XluaComponent" preserve="all"/>
+		<type fullname="MyGame.MonoPInvokeWrapperPreserves" preserve="all"/>
 		
 	</assembly>
 

@@ -97,7 +97,10 @@ namespace MyGame
                     }
                     if (c.type == bcards.type && c.max > bcards.max)
                     {
-                        return true;
+                        if (c.cards.Length==bcards.cards.Length)
+                        {
+                            return true;
+                        }
                     }
                     return false;
                 });

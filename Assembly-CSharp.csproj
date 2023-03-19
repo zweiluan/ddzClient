@@ -309,10 +309,12 @@
      <Compile Include="Assets\MyGame\Scripts\HotFix\Network\Packet\C2S\JoinRoomPacket.cs" />
      <Compile Include="Assets\MyGame\Scripts\HotFix\Network\Packet\C2S\RegisterPacket.cs" />
      <Compile Include="Assets\XLua\Gen\MyGame_GameEntryWrap.cs" />
+     <Compile Include="Assets\XLua\Gen\MyGame_MonoPInvokeWrapperPreservesWrap.cs" />
      <None Include="Assets\HybridCLRData\Generated\link.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\MyGame\LuaScripts\Move.lua.txt" />
      <None Include="Assets\MyGame\LuaScripts\test.lua.txt" />
+     <None Include="Assets\MyGame\Configs\BuildInfo_public.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\MyGame\UI\Art\NewImageEffectShader.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -366,7 +368,6 @@
      <None Include="Assets\MyGame\LuaScripts\Lualibs\util.lua.txt" />
      <None Include="Assets\MyGame\LuaScripts\UI\UIForms\CommandUIFormCtrl.lua.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
-     <None Include="Assets\AddressableAssetsData\link.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2021.3.4f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

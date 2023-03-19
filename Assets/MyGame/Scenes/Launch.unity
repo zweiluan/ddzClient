@@ -722,6 +722,14 @@ PrefabInstance:
       propertyPath: m_AvailableProcedureTypeNames.Array.data[10]
       value: MyGame.Launch.ProcedureVerifyResources
       objectReference: {fileID: 0}
+    - target: {fileID: 11420954, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_Timeout
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447244, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_WebRequestAgentHelperCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 11454530, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
       propertyPath: m_UIGroups.Array.size
       value: 1

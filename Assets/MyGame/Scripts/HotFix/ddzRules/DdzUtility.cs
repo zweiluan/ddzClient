@@ -283,6 +283,15 @@ namespace MyGame
         }
         public static bool IsLegal(Card[] cards,Card[] bottomCards)
         {
+            int bcLength;
+            if (bottomCards==null)
+            {
+                bcLength = 0;
+            }
+            else
+            {
+                bcLength = bottomCards.Length;
+            }
             if (cards==null||cards.Length==0)
             {
                 return false;
@@ -292,9 +301,17 @@ namespace MyGame
             {
                 return false;
             }
-            if (bottomCards==null||bottomCards.Length==0)
+            
+            if (bcLength==0)
             {
                 return true;
+            }
+            else
+            {
+                if (cards.Length==bcLength)
+                {
+                    return true;
+                }
             }
             var l2 = ddzAI.Split(bottomCards);
             

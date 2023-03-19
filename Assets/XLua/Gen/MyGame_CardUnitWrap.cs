@@ -533,7 +533,7 @@ namespace XLua.CSObjectWrap
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			
                 MyGame.CardUnit gen_to_be_invoked = (MyGame.CardUnit)translator.FastGetCSObj(L, 1);
-                gen_to_be_invoked.root = (UnityEngine.Transform)translator.GetObject(L, 2, typeof(UnityEngine.Transform));
+                gen_to_be_invoked.root = (UnityEngine.RectTransform)translator.GetObject(L, 2, typeof(UnityEngine.RectTransform));
             
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);

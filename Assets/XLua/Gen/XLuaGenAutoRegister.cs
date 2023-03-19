@@ -453,6 +453,9 @@ namespace XLua.CSObjectWrap
             translator.DelayWrapLoader(typeof(MyGame.XluaComponent), MyGameXluaComponentWrap.__Register);
         
         
+            translator.DelayWrapLoader(typeof(MyGame.MonoPInvokeWrapperPreserves), MyGameMonoPInvokeWrapperPreservesWrap.__Register);
+        
+        
         
         }
         

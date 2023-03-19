@@ -20,7 +20,7 @@ namespace MyGame
         public Image suitb;
         public Image bg;
         public TextMeshProUGUI text;
-        public Transform root;
+        public RectTransform root;
         //=======================================
         public bool Selected;
         [ShowInInspector]
@@ -111,12 +111,15 @@ namespace MyGame
             Selected = !Selected;
             if (Selected)
             {
-                root.transform.DOMove(transform.position+ Vector3.up * 10, 0.2f);
+
+                root.DOAnchorPos3D(Vector3.up * 40, 0.2f);
+                // DOMove(transform.position+ Vector3.up * 10, 0.2f);
                 // position += Vector3.up * 50;
             }
             else
             {
-                root.transform.DOMove(transform.position, 0.2f);
+                root.DOAnchorPos3D(Vector3.zero, 0.2f);
+                // root.anchoredPosition3D.DOMove(0, 0.2f);
                 // += Vector3.down * 50;
             }
         }
